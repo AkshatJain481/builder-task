@@ -10,7 +10,7 @@ function Navbar() {
     setActiveItem(index);
   };
   return (
-    <nav className='flex items-end justify-between px-16 h-[72px] py-2'>
+    <nav className='flex items-end justify-between px-16 h-[72px] py-2 bg-[#FCF8F4] '>
 
         <svg width="117" height="53" viewBox="0 0 117 53" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M47.4776 27.03L23.8089 6.51242L12.2896 16.4211L0 27.03V20.3075L23.8089 0L47.4776 20.3075V27.03Z" fill="url(#paint0_linear_1042_734)"/>
