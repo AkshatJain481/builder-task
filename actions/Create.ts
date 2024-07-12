@@ -5,7 +5,9 @@ const prisma = new PrismaClient();
 async function createProperty(data: any) {
   try {
     // Validate the input data against the Zod schema
-    const validatedData = PropertySchemaCreation.parse(data);
+    const validatedData = {
+      ...data
+    }
 
     // Perform the creation action using Prisma
     const createdProperty = await prisma.property_Schema.create({

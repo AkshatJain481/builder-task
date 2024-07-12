@@ -1,10 +1,10 @@
 "use client"
-import React,{useState} from 'react'
+import React,{ useState } from 'react'
 import Home from './_components/home'
 import SellerPropertyComponent from './_components/SellerPropertyComponent'
 import { ToastContainer } from 'react-toastify'
 
-function page() {
+function Page() {
   const [show, setShow] = useState(false);
   const [userData , setUserData] = useState<any>(null)
   const handleSetUserData = (data:any) => {
@@ -24,4 +24,4 @@ function page() {
   )
 }
 
-export default page
+export default Page
