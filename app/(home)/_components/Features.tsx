@@ -6,7 +6,7 @@ import { toast } from 'react-toastify'
 import { set } from 'zod'
 
 function Features({nextStep, userData , handleSetUserData}: {nextStep : (isFormComplete: boolean) => void , userData: any , handleSetUserData: (data: any) =>void }) {
-\    const { register, handleSubmit, formState: { errors } } = useForm({
+    const { register, handleSubmit, formState: { errors } } = useForm({
         resolver: zodResolver(FeaturesSchema),
         defaultValues: {
             NonVeg: false,
@@ -21,7 +21,6 @@ function Features({nextStep, userData , handleSetUserData}: {nextStep : (isFormC
         const formattedData = {
             ...userData,
             ...data,
-            
         }
         console.log(formattedData);
         if(formattedData.NonVeg === false || formattedData.Pets === false || formattedData.Electricity === "" || formattedData.Amenities.length === 0){
