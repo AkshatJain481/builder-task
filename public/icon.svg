@@ -1,7 +1,4 @@
-function createCustomIcon() {
-  return L.divIcon({
-    html: `
-      <svg width="35" height="43" viewBox="0 0 35 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="35" height="43" viewBox="0 0 35 43" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M33.8934 17.2874C33.8934 29.5029 17.7597 41.7185 17.7597 41.7185C17.7597 41.7185 1.62598 29.5029 1.62598 17.2874C1.62598 12.9677 3.32578 8.82494 6.35144 5.77047C9.3771 2.71599 13.4808 1 17.7597 1C22.0386 1 26.1423 2.71599 29.168 5.77047C32.1936 8.82494 33.8934 12.9677 33.8934 17.2874Z" fill="#EF5C5C" stroke="#EF5C5C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M29.5095 17.3256C29.4616 26.1549 17.6531 34.9205 17.6531 34.9205C17.6531 34.9205 5.94015 26.0275 5.98798 17.1982C6.0049 14.0759 7.26019 11.0883 9.47772 8.8925C11.6952 6.69669 14.6934 5.4726 17.8125 5.48949C20.9316 5.50639 23.9163 6.7629 26.1099 8.9826C28.3035 11.2023 29.5264 14.2034 29.5095 17.3256Z" fill="white" stroke="#EF5C5C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         <g clip-path="url(#clip0_49_5236)">
@@ -14,9 +11,3 @@ function createCustomIcon() {
         </clipPath>
         </defs>
       </svg>
-    `,
-    className: "custom-icon",
-    iconSize: [35, 43],
-    iconAnchor: [17, 43],
-  });
-}

@@ -1,3 +1,4 @@
+"use client"
 import React, { useState, useEffect, useRef } from 'react';
 import { MapContainer, TileLayer, Marker, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
@@ -132,7 +133,7 @@ const SearchAndMap= ({register } : {register : any}) => {
         >
           <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
           {selectedLocation && (
-            <Marker position={selectedLocation} icon={customIcon} />
+            <Marker position={selectedLocation}  />
           )}
           {selectedLocation && <ChangeView center={selectedLocation} />}
         </MapContainer>
