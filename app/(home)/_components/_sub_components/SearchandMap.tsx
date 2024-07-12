@@ -133,7 +133,7 @@ const SearchAndMap= ({register } : {register : any}) => {
         >
           <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
           {selectedLocation && (
-            <Marker position={selectedLocation}  />
+            <Marker position={selectedLocation} icon={customIcon} />
           )}
           {selectedLocation && <ChangeView center={selectedLocation} />}
         </MapContainer>
