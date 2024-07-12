@@ -5,6 +5,7 @@ import { FeaturesSchema } from '@/Models/PropertySchema'
 import { toast } from 'react-toastify'
 import { set } from 'zod'
 
+
 function Features({nextStep, userData , handleSetUserData}: {nextStep : (isFormComplete: boolean) => void , userData: any , handleSetUserData: (data: any) =>void }) {
     const { register, handleSubmit, formState: { errors } } = useForm({
         resolver: zodResolver(FeaturesSchema),
