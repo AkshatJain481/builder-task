@@ -3,7 +3,6 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { FeaturesSchema } from '@/Models/PropertySchema'
 import { toast } from 'react-toastify'
-import { set } from 'zod'
 
 
 function Features({nextStep, userData , handleSetUserData}: {nextStep : (isFormComplete: boolean) => void , userData: any , handleSetUserData: (data: any) =>void }) {

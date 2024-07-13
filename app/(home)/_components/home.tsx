@@ -10,7 +10,7 @@ import { toast } from 'react-toastify'
 
 
 
-function Home({handleshow , handleSetUserData}: {handleshow: () => void , handleSetUserData: (data:any) => void}) {
+function Home({handleSetUserData}: { handleSetUserData: (data:any) => void}) {
 
     
     
@@ -72,7 +72,6 @@ function Home({handleshow , handleSetUserData}: {handleshow: () => void , handle
 
             return;
         }
-        handleshow();
         console.log(formattedData);
         handleSetUserData(formattedData);
       }

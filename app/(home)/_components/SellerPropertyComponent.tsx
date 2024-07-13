@@ -8,7 +8,7 @@ import PropertyImages from './PropertyImages'
 
 function SellerPropertyComponent({handleSetUserData, userData}: {handleSetUserData: (data: any) =>void, userData: any}) {
       const [currentStep, setCurrentStep] = useState<number>(1);
-      
+        
         const nextStep = (isFormComplete : boolean) => {
           if (isFormComplete) {
             setCurrentStep(prevStep => prevStep + 1);

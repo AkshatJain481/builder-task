@@ -1,12 +1,15 @@
 "use client"
 import React, {useState} from 'react'
 import 'leaflet/dist/leaflet.css';
-import SearchAndMap from './_sub_components/SearchandMap';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { PropertLocationSchema} from "@/Models/PropertySchema";
 import { toast } from 'react-toastify';
+import dynamic from 'next/dynamic';
 
+const SearchAndMap = dynamic(() => import('./_sub_components/SearchandMap'), {
+  ssr: false,
+});
 
 function LocationDetails({nextStep , userData , handleSetUserData}: {nextStep: (isFormComplete: boolean) => void, userData: any , handleSetUserData: (data: any) =>void}) {
     
