@@ -9,8 +9,8 @@ function Features({nextStep, userData , handleSetUserData}: {nextStep : (isFormC
     const { register, handleSubmit, setValue , watch,  formState: { errors } } = useForm({
         resolver: zodResolver(FeaturesSchema),
         defaultValues: {
-            NonVeg: null,
-            Pets: null,
+            NonVeg: false,
+            Pets: false,
             Electricity: '',
             Amenities: [],
         }
@@ -18,26 +18,14 @@ function Features({nextStep, userData , handleSetUserData}: {nextStep : (isFormC
     
     
     const onSubmit = (data: any) => {
-        if(data.NonVeg == 0){
-            data.NonVeg = false
-        }
-        else{
-            data.NonVeg = true
-        }
-
-        if(data.Pets == 0){
-            data.Pets = false
-        }
-        else{
-            data.Pets = true
-        }
+        
         
         const formattedData = {
             ...userData,
             ...data
         }
         console.log(formattedData);
-        if(formattedData.NonVeg === null || formattedData.Pets === null || formattedData.Electricity === "" || formattedData.Amenities.length === 0){
+        if( formattedData.Electricity === "" || formattedData.Amenities.length === 0){
             toast.error('Please fill all the fields')
         }
         else{
@@ -67,13 +55,13 @@ function Features({nextStep, userData , handleSetUserData}: {nextStep : (isFormC
 
                     <input type="radio" value="true"
           checked={nonVegValue === true}
-          onChange={() => setValue('NonVeg', true)}  className='h-6 w-6 '/>
+          onChange={() => setValue('NonVeg', true)}   className='h-6 w-6 '/>
                         <span>Allowed</span>
                     </label>
                     <label htmlFor="" className='flex items-center space-x-4'>
                     <input type="radio" value="false"
           checked={nonVegValue === false}
-          onChange={() => setValue('NonVeg', false)}   className='h-6 w-6 ' />
+          onChange={() => setValue('NonVeg', false)} defaultChecked  className='h-6 w-6 ' />
                         <span>Not Allowed</span>
                     </label>
                     
@@ -93,7 +81,7 @@ function Features({nextStep, userData , handleSetUserData}: {nextStep : (isFormC
                     <label htmlFor="" className='flex items-center space-x-4'>
                     <input type="radio" value="false"
           checked={PetsValue === false}
-          onChange={() => setValue('Pets', false)}  className='h-6 w-6 ' />
+          onChange={() => setValue('Pets', false)} defaultChecked  className='h-6 w-6 ' />
                         <span>No</span>
                     </label>
                     </div>
