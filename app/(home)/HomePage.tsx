@@ -2,7 +2,7 @@
 import React , {useState} from 'react'
 import Navbar from './_components/Navbar'
 import 'react-toastify/dist/ReactToastify.css';
-import SellerPropertyComponent from './_components/SellerPropertyComponent'
+import SellerPropertyComponent from './Form/SellerPropertyComponent'
 import { ToastContainer } from 'react-toastify'
 import Home from './_components/home';
 function HomePage() {
@@ -13,10 +13,7 @@ function HomePage() {
   
   return (
     <>
-    {!userData ? <Home  handleSetUserData={handleSetUserData} />  
-      :
-    <SellerPropertyComponent handleSetUserData={handleSetUserData}  userData = {userData}/>}
-
+     {!userData ? <Home  handleSetUserData={handleSetUserData} /> : <SellerPropertyComponent handleSetUserData={handleSetUserData} userData={userData}/> }
       <ToastContainer />
     </>
   )

@@ -1,14 +1,17 @@
 "use client"
 import React, {useState} from 'react'
-import PropertyDetails from './PropertyDetails'
-import LocationDetails from './LocationDetails'
-import Features from './Features'
-import PriceDetails from './PriceDetails'
-import PropertyImages from './PropertyImages'
+import PropertyDetails from '../_components/PropertyDetails'
+import LocationDetails from '../_components/LocationDetails'
+import Features from '../_components/Features'
+import PriceDetails from '../_components/PriceDetails'
+import PropertyImages from '../_components/PropertyImages'
 
 function SellerPropertyComponent({handleSetUserData, userData}: {handleSetUserData: (data: any) =>void, userData: any}) {
       const [currentStep, setCurrentStep] = useState<number>(1);
-        
+        const [UserData , SetUserData] = useState(userData)
+        const handleChangeUserData = (data: any) =>{
+          SetUserData(data)
+        }
         const nextStep = (isFormComplete : boolean) => {
           if (isFormComplete) {
             setCurrentStep(prevStep => prevStep + 1);
@@ -30,11 +33,11 @@ function SellerPropertyComponent({handleSetUserData, userData}: {handleSetUserDa
             >PROPERTY <br /> IMAGES</li>
 
         </ul>
-        {currentStep === 1 && <PropertyDetails nextStep={nextStep} userData = {userData} handleSetUserData = {handleSetUserData} />}
-        {currentStep === 2 && <LocationDetails nextStep={nextStep} userData = {userData} handleSetUserData={handleSetUserData}/>}
-        {currentStep === 3 && <Features nextStep={nextStep} userData = {userData} handleSetUserData={handleSetUserData}/>}
-        {currentStep === 4 && <PriceDetails nextStep={nextStep} userData= {userData} handleSetUserData={handleSetUserData}/>}
-        {currentStep === 5 &&<PropertyImages nextStep={nextStep} userData={userData} handleSetUserData={handleSetUserData}/>}
+        {currentStep === 1 && <PropertyDetails nextStep={nextStep} userData = {UserData} handleSetUserData = {handleChangeUserData} />}
+        {currentStep === 2 && <LocationDetails nextStep={nextStep} userData = {UserData} handleSetUserData={handleChangeUserData}/>}
+        {currentStep === 3 && <Features nextStep={nextStep} userData = {UserData} handleSetUserData={handleChangeUserData}/>}
+        {currentStep === 4 && <PriceDetails nextStep={nextStep} userData= {UserData} handleSetUserData={handleChangeUserData}/>}
+        {currentStep === 5 &&<PropertyImages nextStep={nextStep} userData={UserData} handleSetUserData={handleChangeUserData}/>}
         
     </div>
 </section>
