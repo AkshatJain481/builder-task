@@ -31,9 +31,9 @@ export const FeaturesSchema = z.object({
   Amenities: z.array(z.string()),
 });
 export const PriceDetailsSchema = z.object({
-  Rent: z.number().int(),
-  Security: z.number().int(),
-  AdditionalDetails: z.string(),
+  Rent: z.number().int().min(0),
+  Security: z.number().int().min(0),
+  AdditionalDetails: z.string().optional(),
 });
 export const PropertyImagesSchema = z.object({
   images: z.array(z.string()),

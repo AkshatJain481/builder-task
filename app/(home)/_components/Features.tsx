@@ -5,6 +5,7 @@ import { FeaturesSchema } from '@/Models/PropertySchema'
 import { toast } from 'react-toastify'
 
 
+
 function Features({nextStep, userData , handleSetUserData}: {nextStep : (isFormComplete: boolean) => void , userData: any , handleSetUserData: (data: any) =>void }) {
     const { register, handleSubmit, setValue , watch,  formState: { errors } } = useForm({
         resolver: zodResolver(FeaturesSchema),
@@ -25,8 +26,8 @@ function Features({nextStep, userData , handleSetUserData}: {nextStep : (isFormC
             ...data
         }
         console.log(formattedData);
-        if( formattedData.Electricity === "" || formattedData.Amenities.length === 0){
-            toast.error('Please fill all the fields')
+        if(formattedData.Amenities.length === 0){
+           return
         }
         else{
         toast.success('Features Added Successfully')
@@ -34,10 +35,15 @@ function Features({nextStep, userData , handleSetUserData}: {nextStep : (isFormC
         nextStep(true)
         }
     };
-    useEffect(()=>{
-        console.log(errors)
-        toast.error("Please fill all the fields")
-    } , [errors])
+    // useEffect(()=>{
+    //     console.log(errors)
+    //     toast.error("Please fill all the fields")
+    // } , [errors])
+    function ShowErrors(){
+        if(errors.Amenities || errors.Electricity || errors.NonVeg || errors.Pets){
+            toast.error("Please fill all fields")
+        }
+    }
 
     const nonVegValue = watch("NonVeg");
     const PetsValue = watch("Pets");
@@ -267,7 +273,7 @@ function Features({nextStep, userData , handleSetUserData}: {nextStep : (isFormC
             Need Help? Call 9999999999
 
             </div>
-            <button className='text-white bg-[#122B49] rounded-lg px-8 py-1 border-2 border-white'>NEXT</button>
+            <button className='text-white bg-[#122B49] rounded-lg px-8 py-1 border-2 border-white' type='submit' onClick={ShowErrors}>NEXT</button>
         </div>
         </form>
     </>

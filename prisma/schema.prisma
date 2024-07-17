@@ -29,6 +29,6 @@ model Property_Schema {
   amenities           String[]
   rent                Int
   security            Int
-  additionalDetails   String
+  additionalDetails   String?
   images              String[]
 }

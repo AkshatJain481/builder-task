@@ -149,10 +149,12 @@ function Home({handleSetUserData}: { handleSetUserData: (data:any) => void}) {
                         <div >
                         <div className='mb-1'>Phone Number <span className='text-red-400'>*</span></div>
                         <PhoneInput
+                            
                             country={'in'}
                             value={phone}
                             onChange={handlePhoneChange}
                             inputProps={{
+                                autoComplete: 'new-phone',
                                 name: 'phone',
                                 className: 'w-full py-2 px-12 rounded-sm'
                             }}
